@@ -1,8 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
-
-export const RoundenButton = ({
+export const RoundedButton = ({
     style = {},
     textStyle = {},
     size = 125,
