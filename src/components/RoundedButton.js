@@ -24,6 +24,7 @@ const styles = (size) =>
         width: size,
         height: size,
         alignItems: 'center',
+        justifyContent: 'center',
         borderColor: '#fff',
         borderWidth: 2
     },
