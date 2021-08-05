@@ -11,7 +11,7 @@ import { Timing } from './Timing'
 
 const DEFAULT_TIME = 0.1
 
-export const Timer = ({ focusSubject, onTimerEnd }) => {
+export const Timer = ({ focusSubject, onTimerEnd, clearSubject }) => {
     useKeepAwake()
 
     const interval = React.useRef(null)
@@ -74,7 +74,14 @@ export const Timer = ({ focusSubject, onTimerEnd }) => {
             {isStarted ? (
                 <RoundedButton title="pause"  onPress={() => setIsStarted(false)} />
             ) : (  <RoundedButton title="start"  onPress={() => setIsStarted(true)} />
-            )}
+            )}           
+            </View>
+            <View style={styles.clearSubject}>
+                <RoundedButton 
+                    title="-" 
+                    size={50}  
+                    onPress={() => clearSubject()} 
+                />
             </View>
         </View>
     )
@@ -105,5 +112,9 @@ const styles = StyleSheet.create({
         padding: 15,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    clearSubject: {
+        paddingBotton: 25,
+        paddingLeft: 25
     }
 })
